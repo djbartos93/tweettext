@@ -30,7 +30,7 @@ def run
 				@outfile.flush
 				@outfile.seek(0, :SET)
 				#hopfully we can print the output file with this 
-				spwan "cat /dev/tweet.txt | lp -o raw
+				spwan "cat /dev/tweet.txt | lp -o raw"
 			end
 		end
 	end
