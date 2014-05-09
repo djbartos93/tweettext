@@ -30,6 +30,10 @@ def run
 				@outfile.flush
 				@outfile.seek(0, IO::SEEK_SET)				
 				system "./print.sh"
+				# this next bit will make sure the output file is empty.
+				#lets make tweettext wait until its done printing first.
+				sleep(1.0)
+				@outfile.truncate(0)
 			end
 		end
 	end
