@@ -28,9 +28,8 @@ def run
 				puts "Got tweet from user: #{object.text}"
 				@outfile.write(object.text)
 				@outfile.flush
-				@outfile.seek(0, :SET)
-				#hopfully we can print the output file with this 
-				spwan "cat /dev/tweet.txt | lp -o raw"
+				@outfile.seek(0, IO::SEEK_SET)				
+				system "./print.sh"
 			end
 		end
 	end
