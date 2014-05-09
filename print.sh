@@ -7,7 +7,7 @@
 echo "making some pbm files from the text output file"
 
 #This is the guts of the operation. converiting the text file to a pbm
-convert -size 600x900  -pointsize 40 label:@/home/erbartos/twitprint/tweettext/tweet.txt print.pbm
+convert -size 600x300  -pointsize 40 caption:@/home/erbartos/twitprint/tweettext/tweet.txt print.pbm
 
 echo "lets print the image!"
 
