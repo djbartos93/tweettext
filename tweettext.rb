@@ -25,8 +25,10 @@ def run
 		case object
 		when Twitter::Tweet
 			if object.user.screen_name == @configFile['USER_ID']
-				puts "Got tweet from user: #{object.text}"
+				puts "Got tweet from user: #{object.created_at} #{object.text}"
 				@outfile.write(object.text)
+				@outfile.write(" - Downloaded at: ")
+				@outfile.write(object.created_at)
 				@outfile.flush
 				@outfile.seek(0, IO::SEEK_SET)				
 				system "./print.sh"
